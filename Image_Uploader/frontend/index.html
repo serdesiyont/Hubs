@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Image Upload</h2>
+    <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fileElem">Select or Drag Image(s)</label>
+            <div id="drop-area">
+                <p>Drag & drop images here or click to select files</p>
+                <input type="file" id="fileElem" multiple accept="image/*">
+            </div>
+            <div id="preview-area"></div>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+</body>
+</html>
