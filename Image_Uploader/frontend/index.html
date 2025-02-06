@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Upload Form</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Image Uploader</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .drop-zone {
+            width: 300px; height: 200px; border: 2px dashed #ccc;
+            display: flex; align-items: center; justify-content: center;
+            margin: auto; cursor: pointer;
+        }
+        .drop-zone.dragover { border-color: #000; }
+        img { max-width: 100%; margin-top: 20px; }
+        p { font-size: 1.2em; }
+    </style>
 </head>
 <body>
-
-<div class="container">
-    <h2>Image Upload</h2>
-    <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="fileElem">Select or Drag Image(s)</label>
-            <div id="drop-area">
-                <p>Drag & drop images here or click to select files</p>
-                <input type="file" id="fileElem" multiple accept="image/*">
-            </div>
-            <div id="preview-area"></div>
-        </div>
-        <button type="submit">Upload</button>
-    </form>
-</div>
-
+    <h1>Upload an Image</h1>
+    <div class="drop-zone" id="dropZone">Drop an image here or click to upload</div>
+    <input type="file" id="fileInput" style="display: none;">
+    <img id="uploadedImage" style="display: none;">
+    
+    <script src="script.js"></script>
 </body>
 </html>
